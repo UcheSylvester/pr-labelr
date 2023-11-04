@@ -2,6 +2,14 @@ name: "Label new PR requests"
 description: "Automatically label new PR requests"
 author: "Uchenna Okoro"
 
+inputs:
+  gh-token:
+    description: "GitHub token for authentication"
+    required: true
+  label:
+    description: "Label to add to new PR requests"
+    required: true
+
 runs:
   using: "node16"
   main: "dist/index.js"
