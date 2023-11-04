@@ -3,7 +3,7 @@ description: "Automatically label new PR requests"
 author: "Uchenna Okoro"
 
 inputs:
-  gh-token:
+  github-token:
     description: "GitHub token for authentication"
     required: true
   label:
