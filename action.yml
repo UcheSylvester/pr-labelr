@@ -1,0 +1,7 @@
+name: "Label new PR requests"
+description: "Automatically label new PR requests"
+author: "Uchenna Okoro"
+
+runs:
+  using: "node16"
+  main: "index.js"
