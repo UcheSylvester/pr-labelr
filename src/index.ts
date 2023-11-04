@@ -8,7 +8,7 @@ const run = async () => {
   const octokit = getOctokit(token);
 
   const pullRequest = context.payload.pull_request;
-  console.log({ token, label, octokit, pullRequest });
+  console.log({ token, label, pullRequest });
 
   try {
     if (!pullRequest) throw new Error("No pull request found");
