@@ -18,7 +18,6 @@ const run = async () => {
     try {
         if (!pullRequest)
             throw new Error("No pull request found");
-        console.log("hello2");
         await octokit.rest.issues.addLabels({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
@@ -31,7 +30,9 @@ const run = async () => {
     }
 };
 exports.run = run;
-(0, exports.run)();
+if (!process.env.JEST_WORKER_ID) {
+    (0, exports.run)();
+}
 
 
 /***/ }),
