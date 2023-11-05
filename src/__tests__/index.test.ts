@@ -30,7 +30,7 @@ describe('run', () => {
         title: '[HOTFIX]: This is a hotfix',
       },
     };
-    (mockContext.repo as any) = {
+    (mockContext.repo as unknown) = {
       owner: 'owner',
       repo: 'repo',
     };
