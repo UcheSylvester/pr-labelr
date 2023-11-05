@@ -1,5 +1,5 @@
-name: 'Label new PR requests'
-description: 'Automatically label new PR requests'
+name: 'Pr labelr'
+description: 'Automatically label new Pull requests'
 author: 'Uchenna Okoro'
 
 inputs:

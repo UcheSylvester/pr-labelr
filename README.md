@@ -1,4 +1,4 @@
-# Auto PR Labelr
+# Pr Labelr
 
 This GitHub Action automatically adds given labels to pull requests
 
@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Add Labels to PR
-        uses: UcheSylvester/auto-pr-labelr
+        uses: UcheSylvester/pr-labelr@v0.0.3
         with:
           label: some-label
           github-token: ${{ secrets.GITHUB_TOKEN }}
