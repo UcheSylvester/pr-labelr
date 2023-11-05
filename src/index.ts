@@ -9,6 +9,8 @@ export const run = async () => {
 
   const pullRequest = context.payload.pull_request;
 
+  console.log({ pullRequest });
+
   try {
     if (!pullRequest) throw new Error('No pull request found');
 
