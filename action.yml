@@ -6,9 +6,10 @@ inputs:
   github-token:
     description: 'GitHub token for authentication'
     required: true
-  label:
-    description: 'Label to add to new PR requests'
-    required: true
+  default-label:
+    description: 'A default label to add to PRs'
+    required: false
+    default: 'pending-review'
 
 runs:
   using: 'node16'
