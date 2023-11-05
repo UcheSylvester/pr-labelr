@@ -4,7 +4,7 @@ This GitHub Action automatically adds given labels to pull requests
 
 ## Usage
 
-1. **Create a Workflow YAML File**: In your repository, create or edit a workflow YAML file (e.g., `.github/workflows/auto-add-labels.yml`).
+1. **Create a Workflow YAML File**: In your repository, create or edit a workflow YAML file (e.g `.github/workflows/auto-add-labels.yml`).
 
 2. **Define the Workflow**:
 
