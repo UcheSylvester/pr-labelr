@@ -15,6 +15,7 @@ const run = async () => {
     const label = (0, core_1.getInput)('label');
     const octokit = (0, github_1.getOctokit)(token);
     const pullRequest = github_1.context.payload.pull_request;
+    console.log({ pullRequest });
     try {
         if (!pullRequest)
             throw new Error('No pull request found');
