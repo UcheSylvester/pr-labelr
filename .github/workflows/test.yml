@@ -2,18 +2,15 @@ name: 'Tests'
 
 on:
   push:
-    branches: [master]
+    branches:
+      - 'master'
     paths:
       - 'src/**'
       - 'tests/**'
       - 'package-lock.json'
       - '.github/workflows/tests.yml'
   pull_request:
-    paths:
-      - 'src/**'
-      - 'tests/**'
-      - 'package-lock.json'
-      - '.github/workflows/tests.yml'
+    types: [opened, synchronize, reopened]
 
 jobs:
   main:
