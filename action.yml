@@ -1,6 +1,6 @@
 name: 'Pr labelr'
 description: 'Automatically label new Pull requests'
-author: 'Uchenna Okoro'
+author: 'Uchenna Sylvester Okoro'
 
 inputs:
   github-token:
