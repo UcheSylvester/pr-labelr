@@ -11,13 +11,13 @@ exports.run = void 0;
 const core_1 = __nccwpck_require__(2186);
 const github_1 = __nccwpck_require__(5438);
 const run = async () => {
-    const token = (0, core_1.getInput)("github-token");
-    const label = (0, core_1.getInput)("label");
+    const token = (0, core_1.getInput)('github-token');
+    const label = (0, core_1.getInput)('label');
     const octokit = (0, github_1.getOctokit)(token);
     const pullRequest = github_1.context.payload.pull_request;
     try {
         if (!pullRequest)
-            throw new Error("No pull request found");
+            throw new Error('No pull request found');
         await octokit.rest.issues.addLabels({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
@@ -26,7 +26,7 @@ const run = async () => {
         });
     }
     catch (error) {
-        (0, core_1.setFailed)((error === null || error === void 0 ? void 0 : error.message) || "An unexpected error occurred!");
+        (0, core_1.setFailed)((error === null || error === void 0 ? void 0 : error.message) || 'An unexpected error occurred!');
     }
 };
 exports.run = run;
