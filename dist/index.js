@@ -10,15 +10,22 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.run = void 0;
 const core_1 = __nccwpck_require__(2186);
 const github_1 = __nccwpck_require__(5438);
+const LOOKUP_KEYS = [']:', ']'];
 const run = async () => {
+    var _a, _b, _c;
     const token = (0, core_1.getInput)('github-token');
-    const label = (0, core_1.getInput)('label');
+    const defaultLabel = (_a = (0, core_1.getInput)('default-label')) === null || _a === void 0 ? void 0 : _a.toLocaleLowerCase();
     const octokit = (0, github_1.getOctokit)(token);
     const pullRequest = github_1.context.payload.pull_request;
-    console.log({ pullRequest });
     try {
         if (!pullRequest)
             throw new Error('No pull request found');
+        // title should be in format "[LABEL]: <title>", e.g. "bug: something is broken"
+        const title = pullRequest.title.toLocaleLowerCase();
+        const hasLookupKeys = LOOKUP_KEYS.some((key) => title.includes(key));
+        const label = hasLookupKeys
+            ? (_c = (_b = (title.split(']')[0] || title.split(']:')[0])) === null || _b === void 0 ? void 0 : _b.replace('[', '')) === null || _c === void 0 ? void 0 : _c.replace(' ', '-')
+            : defaultLabel;
         await octokit.rest.issues.addLabels({
             owner: github_1.context.repo.owner,
             repo: github_1.context.repo.repo,
